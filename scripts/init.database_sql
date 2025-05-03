@@ -1,16 +1,28 @@
 /*
 =============================================================
-Create Database and Schemas
+Create Database and Schemas for Data Warehouse
 =============================================================
+
 Script Purpose:
-    This script creates a new database named 'DataWarehouse' 
-    Additionally, the script sets up three schemas within the database: 'bronze', 'silver', and 'gold'.
+    This script creates a new PostgreSQL database named 'datawarehouse'. It checks if the database already exists, and if it does, it drops the existing one and recreates it. The script also creates three schemas within the new database: 'bronze', 'silver', and 'gold', which will be used for staging, refined, and business-ready data, respectively.
+
+WARNING:
+    Running this script will permanently delete the existing 'datawarehouse' database if it exists. All data will be lost. 
+    Ensure proper backups are taken before proceeding.
+
+IMPORTANT:
+    This script must be executed from a different database (not 'datawarehouse') and with a superuser role or a user with necessary privileges.
 */
 
--- Create the "Datawarehouse" database 
-CREATE DATABASE Datawarehouse;
+-- Drop the 'datawarehouse' database if it exists, this ensures we are starting fresh by removing any existing database.
+DROP DATABASE IF EXISTS datawarehouse;
 
--- Create Schema
+-- Create the 'datawarehouse' database
+CREATE DATABASE datawarehouse;
+
+-- Connect to the 'datawarehouse' database
+
+-- Create schemas within the 'datawarehouse' database, creating 'bronze', 'silver', and 'gold' schemas within the data warehouse.
 CREATE SCHEMA bronze;
 CREATE SCHEMA silver;
 CREATE SCHEMA gold;
