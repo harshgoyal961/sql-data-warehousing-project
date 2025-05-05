@@ -6,7 +6,7 @@ Script Purpose:
     This stored procedure loads data into the 'bronze' schema from external CSV files. 
     It performs the following actions:
     - Truncates the bronze tables before loading data.
-    - Uses the `COPY / FROM` command to load data from csv Files to bronze tables.
+    - Uses the `COPY / FROM` command to load data from CSV files to bronze tables.
 
 Parameters:
     None. This stored procedure does not accept any parameters or return any values.
@@ -20,10 +20,10 @@ CREATE OR REPLACE PROCEDURE bronze.load_bronze()
 LANGUAGE plpgsql
 AS $$
 DECLARE
-    start_time TIMESTAMP;
-    end_time TIMESTAMP;
-    batch_start_time TIMESTAMP := CURRENT_TIMESTAMP;  
-    batch_end_time TIMESTAMP;                         
+    start_time         TIMESTAMP;
+    end_time           TIMESTAMP;
+    batch_start_time   TIMESTAMP := CURRENT_TIMESTAMP;  
+    batch_end_time     TIMESTAMP;                         
 BEGIN
 
     RAISE NOTICE '================================================';
@@ -112,4 +112,3 @@ EXCEPTION
         RAISE NOTICE '==========================================';
 END;
 $$;
-    
