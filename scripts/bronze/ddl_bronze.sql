@@ -32,7 +32,6 @@ CREATE TABLE bronze.crm_prd_info
     prd_end_dt   TIMESTAMP
 );
 
-
 DROP TABLE IF EXISTS bronze.crm_sales_details;
 CREATE TABLE bronze.crm_sales_details 
 (
@@ -46,7 +45,6 @@ CREATE TABLE bronze.crm_sales_details
     sls_quantity INT,
     sls_price    INT
 );
-
 
 DROP TABLE IF EXISTS bronze.erp_loc_a101;
 CREATE TABLE bronze.erp_loc_a101 
